@@ -1,0 +1,97 @@
+{
+  "name": "translate",
+  "displayName": "龙丽的翻译工具",
+  "description": "百度api翻译长句(增加开发效率)",
+  "version": "0.0.1",
+  "icon": "src/static/icon.png",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "丽丽",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "translate-ll",
+          "title": "长句翻译",
+          "icon": "src/static/tag.svg"
+        }
+      ]
+    },
+    "views": {
+      "translate-ll": [
+        {
+          "id": "lili",
+          "name": "translate",
+          "type": "webview"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "lili.translate",
+        "title": "长句翻译"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "translate.left",
+        "key": "ctrl+left",
+        "mac": "cmd+left",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "translate.right",
+        "key": "ctrl+right",
+        "mac": "cmd+right",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "repository": {},
+  "license": "MIT",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.8",
+    "@types/md5": "^2.3.3",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "@types/vscode": "^1.82.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "@vitejs/plugin-react": "^4.1.0",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "handlebars": "^4.7.8",
+    "js-yaml": "^4.1.0",
+    "md5": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

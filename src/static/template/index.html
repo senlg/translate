@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长句翻译</title>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="message"></div>
+    <!-- {{#each scriptUris}}
+    <script src="{{this}}"></script>
+    {{/each}} -->
+    <script src="../../../dist/assets/main.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("message", (e)=>{
+            document.querySelector("#message").innerHTML = e.data;
+        })
+    </script>
+</body>
+</html>
